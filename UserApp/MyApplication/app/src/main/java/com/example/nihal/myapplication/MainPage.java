@@ -14,7 +14,7 @@ public class MainPage extends MaterialNavigationDrawer {
 
      @Override
     public void init(Bundle savedInstanceState) {
-
+         this.addSection(newSection("Section 1", new TrainMapFragment()));
     }
 
 }
