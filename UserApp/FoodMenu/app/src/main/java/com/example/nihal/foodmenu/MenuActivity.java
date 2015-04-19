@@ -1,10 +1,16 @@
 package com.example.nihal.foodmenu;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -12,7 +18,9 @@ import android.widget.TextView;
 public class MenuActivity extends ActionBarActivity {
 
     ListView menuList;
-    TextView totalText;
+    //TextView totalText;
+    private int total;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,28 @@ public class MenuActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_menu, menu);
         return true;
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        return super.onTouchEvent(event);
+    }
+
+/*    public View updateTotal(View convertView, ViewGroup parent){
+        View view = convertView;
+        TextView totalText = (TextView) view.findViewById(R.id.totalTextView);
+        CheckBox cb = (CheckBox) view.findViewById(R.id.checkBox1);
+        cb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(((CheckBox)view).isChecked()){
+                    total +=
+                    totalTextView
+                }
+            }
+        });
+        return view;
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

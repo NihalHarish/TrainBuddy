@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class ShopsActivity extends ActionBarActivity {
 
     ListView shopView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

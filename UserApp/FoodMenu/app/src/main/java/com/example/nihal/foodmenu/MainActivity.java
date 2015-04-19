@@ -1,8 +1,11 @@
 package com.example.nihal.foodmenu;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,11 +15,13 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 
+
 public class MainActivity extends ActionBarActivity {
 
 
     private ListView lv;
     private Model[] modelItems;
+    private ProgressDialog pDialog;
 
     private ListView stationListView;
 
@@ -37,9 +42,9 @@ public class MainActivity extends ActionBarActivity {
 
         /*REMOVE THIS AND INSERT DYNAMIC LIST GENERATOR*/
 
-        String[] stationArray = {"Bangalore", "Delhi", "Mumbai", "Chennai", "Kolkata", "Jaipur", "Mohali", "Hyderabad", "Pondicherry", "Goa"};
-
-        buildStationListView(stationArray);
+        String[] stationArray = {"Chennai Central ", "Arakkonam ", "Katpadi Jn ", "Jolarpettai ", "Bangarapet ", "Bangalore East ", "Bangalore Cant ", "Bangalore Cy Jn "};
+        makeRequest();
+        //buildStationListView(stationArray);
 
 
     }
@@ -69,6 +74,7 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -83,4 +89,66 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    private String[] processJSON(String input){
+        String[] array = input.split(",");
+        for(int i=0;i<array.length;i++) {
+
+            if(i==0)
+                array[i]=array[i].substring(2,array[i].length()-1);
+            else if(i==array.length-1)
+                array[i]=array[i].substring(2,array[i].length()-3);
+
+            else
+            {
+                array[i]=array[i].substring(2,array[i].length()-1);
+            }
+        }
+
+        return array;
+    }
+    private void makeRequest(){
+        String PNR = "4519282568";
+        new QueryServer(PNR).execute(new ApiConnector());
+    }
+
+
+    private class QueryServer extends AsyncTask<ApiConnector,Long,String>
+    {
+        String PNR;
+        QueryServer(String PNR){
+            this.PNR = PNR;
+        }
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog.setMessage("Attempting for login...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+
+
+        @Override
+        protected String doInBackground(ApiConnector... params) {
+
+            // it is executed on Background thread
+
+            return params[0].sendStationList(PNR);
+        }
+
+        @Override
+        protected void onPostExecute(String jsonArray) {
+            pDialog.dismiss();
+
+           String stringArray ;
+
+           stringArray=jsonArray.toString();
+
+            Toast.makeText(MainActivity.this, "json"+ stringArray, Toast.LENGTH_LONG).show();
+            buildStationListView(processJSON(jsonArray));
+
+        }
+    }
+
 }
