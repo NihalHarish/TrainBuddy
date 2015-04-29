@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/d_name"
+        android:title="One"/>
+
+    <item
+        android:id="@+id/taxi_name"
+        android:title="Two"/>
+
+    <item
+        android:id="@+id/taxi_no"
+        android:title="Three"/>
+
+    <item
+        android:id="@+id/rate"
+        android:title="Three"/>
+
+
+    <item
+        android:id="@+id/phone"
+        android:title="Three"/>
+
+    <item
+        android:id="@+id/type"
+        android:title="@string/car_type"/>
+</menu>

@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.example.nihal.maindriver.HomeFragment"
+    android:background="@color/AntiqueWhite">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:text="Home Page"
+        android:id="@+id/home_heading"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:background="@color/NavajoWhite"
+        android:textColor="@color/Red" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/pnr_text"
+        android:layout_gravity="center" />
+
+    <Button
+        android:text="Set PNR"
+        android:id="@+id/pnr_button"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:background="@color/OrangeRed"
+        android:textSize="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />/>
+
+
+</FrameLayout>

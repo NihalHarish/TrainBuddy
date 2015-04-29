@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AntiqueWhite">
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Book Taxi!"
+        android:id="@+id/button"
+        android:background="@color/OrangeRed"
+        android:textSize="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Book Later"
+        android:id="@+id/button2"
+        android:background="@color/OrangeRed"
+        android:textSize="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Taxi"
+        android:id="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textColor="@color/Red"
+        android:background="@color/NavajoWhite" />
+
+<RadioGroup
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_alignParentLeft="true"
+    android:id="@+id/taxiGroup"
+    android:layout_alignParentStart="true">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prime"
+        android:id="@+id/prime"
+        android:layout_gravity="right"
+        android:textSize="20dp"
+        android:textColor="@color/DarkRed"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="32dp"
+        android:layout_marginEnd="32dp" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sedan"
+        android:id="@+id/sedan"
+        android:textSize="20dp"
+        android:textColor="@color/DarkRed"
+        android:layout_alignTop="@+id/prime"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mini"
+        android:id="@+id/mini"
+        android:textSize="20dp"
+        android:textColor="@color/DarkRed"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center_horizontal" />
+
+</RadioGroup>
+
+</RelativeLayout>

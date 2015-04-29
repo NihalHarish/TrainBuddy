@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nihal.maindriver.TrainStatusFragment"
+    android:background="@color/AntiqueWhite">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check Train Status"
+        android:id="@+id/status_button"
+        android:background="@color/OrangeRed"
+        android:textSize="25dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Alarm"
+        android:id="@+id/alarm_button"
+        android:background="@color/OrangeRed"
+        android:textSize="25dp"
+        android:layout_gravity="center_horizontal|bottom" />
+
+</FrameLayout>

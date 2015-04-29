@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:text="Station List"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:background="@color/NavajoWhite"
+        android:textColor="@color/Red" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Please Set A Valid PNR"
+        android:id="@+id/prompt_text"
+        android:visibility="invisible"
+        android:background="@color/AntiqueWhite"/>
+
+    <ListView
+        android:id="@+id/stationList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/AntiqueWhite">
+    </ListView>
+
+</LinearLayout>
